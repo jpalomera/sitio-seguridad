@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Prototipo navegable para consolidar accesos y priorizar riesgos.">
+  <title>Control de accesos · Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><b>UA</b><span><strong>Control de accesos</strong><small>Prototipo navegable</small></span></div>
+    <nav aria-label="Navegación principal">
+      <button class="nav active" data-view="overview">⌂ <span>Resumen</span></button>
+      <button class="nav" data-view="people">♙ <span>Por usuario</span></button>
+      <button class="nav" data-view="apps">◇ <span>Aplicaciones y riesgo</span></button>
+    </nav>
+    <button class="tour" data-view="overview">▶ Recorrido de 3 pasos</button>
+    <p class="demo-note">Datos 100% ficticios<br>Versión pública de demostración</p>
+  </aside>
+
+  <main>
+    <header><div><p class="eyebrow">SEGURIDAD Y CUMPLIMIENTO</p><h1 id="title">Resumen de accesos</h1><p id="subtitle">Visibilidad centralizada para decidir dónde actuar primero.</p></div><div class="status"><i></i><span id="status">Demo lista</span></div></header>
+
+    <section class="view active" id="overview">
+      <article class="hero"><div><p>PROPUESTA PARA GERENCIA TI Y CIBERSEGURIDAD</p><h2>De planillas dispersas a decisiones de acceso en minutos</h2><span>Un recorrido simple para detectar una señal, investigar a una persona y priorizar una acción.</span></div><button data-view="overview">Comenzar recorrido →</button></article>
+      <div class="step"><b>1</b><div><strong>Detecta una señal</strong><span>Selecciona un indicador para ver su evidencia.</span></div><button data-view="people">Siguiente: investigar usuario →</button></div>
+      <div class="metrics" id="metrics"></div>
+      <article class="panel detail"><div class="panel-head"><div><small id="detail-kind">KPI SELECCIONADO</small><h2 id="detail-title">Usuarios identificados</h2><p id="detail-text">Personas consolidadas desde distintas fuentes.</p></div><span id="detail-total">—</span></div><div class="table-wrap"><table><thead><tr><th>Elemento</th><th>Tipo</th><th>Estado</th><th>Señal</th></tr></thead><tbody id="detail-body"></tbody></table></div></article>
+    </section>
+
+    <section class="view" id="people">
+      <div class="step"><b>2</b><div><strong>Investiga a la persona</strong><span>Busca un usuario y revisa todos sus accesos.</span></div><div class="actions"><button class="secondary" data-view="overview">← Volver</button><button data-view="apps">Siguiente: priorizar riesgo →</button></div></div>
+      <article class="panel"><div class="panel-head"><div><h2>Sitios y aplicaciones por usuario</h2><p>Cada fila representa una relación de acceso ficticia.</p></div><span id="people-count">—</span></div><div class="filters"><label class="search">⌕ <input id="people-search" type="search" placeholder="Buscar persona, aplicación o estado…"></label><select id="people-status"><option value="">Todos los estados</option><option>Activo</option><option>Revisión</option><option>Revocado</option></select></div><div class="table-wrap"><table><thead><tr><th>Usuario</th><th>Aplicación</th><th>Tipo</th><th>Estado</th><th>Última actividad</th></tr></thead><tbody id="people-body"></tbody></table></div></article>
+    </section>
+
+    <section class="view" id="apps">
+      <div class="step"><b>3</b><div><strong>Prioriza la acción</strong><span>Filtra por riesgo y entiende qué requiere atención.</span></div><div class="actions"><button class="secondary" data-view="people">← Volver</button><button id="finish">Finalizar recorrido ✓</button></div></div>
+      <article class="panel"><div class="panel-head"><div><h2>Aplicaciones y riesgo</h2><p>Vista inversa para priorizar decisiones.</p></div><span id="apps-count">—</span></div><div class="filters"><label class="search">⌕ <input id="apps-search" type="search" placeholder="Buscar aplicación o motivo…"></label><select id="apps-risk"><option value="">Todos los riesgos</option><option>Alto</option><option>Medio</option><option>Bajo</option></select></div><div class="table-wrap"><table><thead><tr><th>Aplicación</th><th>Usuarios</th><th>Estados</th><th>KRI</th><th>Motivo</th></tr></thead><tbody id="apps-body"></tbody></table></div></article>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status">Recorrido completado. La idea está lista para conversar.</div>
+  <script src="app.js"></script>
+</body>
+</html>
+
