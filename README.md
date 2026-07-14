@@ -16,3 +16,9 @@ Un recorrido navegable de tres pasos:
 
 Las tarjetas, navegación, búsquedas, filtros y estados son interactivos. Todos los nombres y registros de esta versión son ficticios.
 
+
+
+## Abrir la demostración
+
+- [Demo navegable (enlace alternativo)](https://raw.githack.com/jpalomera/sitio-seguridad/main/index.html)
+- [GitHub Pages](https://jpalomera.github.io/sitio-seguridad/)
